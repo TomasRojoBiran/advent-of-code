@@ -1,6 +1,10 @@
-pub fn parse(input: &str) -> Vec<Vec<&str>> {
+pub fn parse(input: &str) -> Vec<Vec<char>> {
     input
         .lines()
-        .map(|line| vec![line])
+        .map(|line| {
+            line
+                .chars()
+                .collect()
+        })
         .collect()
 }

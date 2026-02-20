@@ -1,4 +1,4 @@
-pub fn solve(parsed: Vec<Vec<&str>>) -> u64 {
+pub fn solve(parsed: Vec<Vec<char>>) -> u64 {
     println!("{:?}", parsed);
     todo!("Implement solve")
 }
