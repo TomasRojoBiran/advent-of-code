@@ -20,7 +20,7 @@ mod tests {
 @.@@@.@@@@
 .@@@@@@@@.
 @.@.@@@.@.";
-        let parsed = parse(input)?;
+        let parsed = parse(input);
         let result = solve(parsed);
 
         assert_eq!(result, 13);
