@@ -18,10 +18,11 @@ pub fn solve(parsed: Vec<Vec<char>>) -> u64 {
                 for (di, dj) in NEIGHBORS {
                     let ni = i as i32 + di;
                     let nj = j as i32 + dj;
-                    if (0..parsed.len() as i32).contains(&ni) && (0..parsed[ni as usize].len()).contains(&(nj as usize)) {
-                        if parsed[ni as usize][nj as usize] == '@' {
-                            count_matrix[i][j] += 1
-                        }
+                    if (0..parsed.len() as i32).contains(&ni)
+                        && (0..parsed[ni as usize].len()).contains(&(nj as usize))
+                        && parsed[ni as usize][nj as usize] == '@'
+                    {
+                        count_matrix[i][j] += 1
                     }
                 }
                 if count_matrix[i][j] < 4 {
