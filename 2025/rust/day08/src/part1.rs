@@ -1,3 +1,31 @@
+use std::collections::BinaryHeap;
+
+const K_CLOSEST: usize = 1000;
+
+fn squared_dist(p: [i64; 3], q: [i64; 3]) -> i64 {
+    (p[0] - q[0]).pow(2) + (p[1] - q[1]).pow(2) + (p[2] - q[2]).pow(2)
+}
+
+pub fn solve(parsed: Vec<[i64; 3]>) -> u64 {
+    let mut edges = BinaryHeap::new();
+
+    for i in 0..parsed.len() {
+        for j in i + 1..parsed.len() {
+            let d = squared_dist(parsed[i], parsed[j]);
+            if edges.len() < K_CLOSEST {
+                edges.push((d, i, j));
+            } else if d < edges.peek().unwrap().0 {
+                edges.pop();
+                edges.push((d, i, j))
+            }
+        }
+    }
+    let edges = edges.into_sorted_vec();
+
+    println!("{:?}", edges);
+    todo!()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
