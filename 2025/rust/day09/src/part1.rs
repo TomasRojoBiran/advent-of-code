@@ -1,3 +1,8 @@
+pub fn solve(parsed: Vec<(u64, u64)>) -> u64 {
+    println!("{:?}", parsed);
+    todo!("Implement solve")
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -13,7 +18,7 @@ mod tests {
 2,5
 2,3
 7,3";
-        let parsed = parse(input);
+        let parsed = parse(input)?;
         let result = solve(parsed);
 
         assert_eq!(result, 50);
