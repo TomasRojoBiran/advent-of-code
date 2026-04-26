@@ -1,3 +1,7 @@
+pub fn solve(parsed: Vec<(Vec<&str>, Vec<Vec<u8>>, Vec<u32>)>) -> u64 {
+    todo!("Implemnt solve")
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
